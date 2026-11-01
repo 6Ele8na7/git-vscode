@@ -1,0 +1,53 @@
+Elena Kiritjenko
+TEKNISK PROJEKTRAPPORT: SYSTEMENTOR ZOO
+
+Kursmodul: Webbutveckling (HTML5 & CSS3)
+Projektform: Single Page Application (SPA)
+
+
+
+1. INLEDNING OCH SYFTE
+
+Systementor Zoo har identifierat ett behov av en modern, tillgänglig och säljande webbnärvaro för att marknadsföra sin verksamhet samt tillhandahålla relevant information till sina besökare. Syftet med detta projekt har varit att designa och producera en fullt responsiv prototyphemsida enligt arkitekturmodellen Single Page Application (SPA). Sidan kombinerar visuella element med funktionella gränssnitt som digitala registreringsformulär och interaktiva karttjänster.
+
+2. KRAVUPPFYLLNAD OCH TEKNISK SPECIFIKATION
+
+Projektet har implementerats i strikt enlighet med de uppställda kraven för både Godkänt (G) och Väl Godkänt (VG). Nedan redovisas den tekniska tillämpningen för respektive kravområde:
+
+2.1 Arkitektur och Styling (Krav G)
+
+• SPA-struktur: Hela applikationens struktur är exekverad inom en enda fil (index.html).
+• Separation of Concerns (SoC): All visuell formgivning och layoutlogik har brutits ut till en extern stilmall (style.css). HTML-dokumentet innehåller inga inline-stylings.
+• Kodstandard: Samtliga klassnamn har skrivits uteslutande på engelska (t.ex. .zoo-header, .animal-gallery, .zoo-table) för att följa internationell branschstandard inom systemutveckling.
+• Semantisk HTML: Dokumentet följer en strikt rubrikhierarki med en unik huvudrubrik (<h1>) följt av logiskt strukturerade undersektioner (<h2> och <h3>).
+
+2.2 Komponenter och Innehåll (Krav G)
+
+• Horisontellt Bildgalleri: Djurarterna (Lejon, Pingvin, Panda, Koala) presenteras i ett vågrätt galleri. Layouten styrs via CSS Flexbox med ett definierat avstånd (gap: 1.5rem) för att garantera ett luftigt och symmetriskt utseende.
+• Sektionen "Att Göra": Sektionen är uppdelad i tre semantiska underavdelningar (Lekpark till barnen, Restauranger, Alla våra fantastiska djur) förstärkta med vektorgrafiska ikoner via FontAwesome.
+• Datatabell: En fullständig HTML-tabell (<table>) har implementerats med kolumner för Namn, Art (bildminiatyr), Vikt samt en hyperlänk (<a>) med attributet target="_blank" som leder direkt till djurets officiella Wikipedia-sida.
+
+2.3 Formulär och Datavalidering (Krav G)
+
+Nyhetsbrevsformuläret har byggts för att hantera insamling av användardata (förnamn, efternamn, e-postadress samt ålder) med inbyggd klientsidovalidering via HTML5-attribut:
+• required: Spärrar inskickning om fält lämnas tomma.
+• type="email": Validerar automatiskt att strängen innehåller ett giltigt @-tecken samt en domänändelse.
+• type="number": Begränsar indata till numeriska värden inom ett angivet spann (min="1" max="120").
+• Dataöverföring: Formulärets action-attribut är mappat mot webbtjänsten https://postman-echo.com med metoden POST, vilket skickar användardatan i HTTP-requestens body.
+
+2.4 Responsivitet och Kartintegration (Krav VG)
+
+• Media Queries & Brytpunkter: Sidan har optimerats för universell visning genom implementering av tre distinkta breakpoints:
+	1. @media (max-width: 768px) (Surfplattor): Det horisontella bildgalleriet skiftar från 4 kolumner till ett 2x2 grid-layout.
+	2. @media (max-width: 480px) (Mobila enheter): Layouten kollapsar till en helt vertikal struktur (1 kolumn), textstorlekar och marginaler skalas ner, och aktiviteternas ikoner centreras.
+	3. @media (min-width: 1200px) (Stora desktop-skärmar): Maximerar sidans containerbredd till 1200px för att förhindra textsträckning på ultrabreda skärmar.
+• Google Maps Integration: En interaktiv karta har integrerats i sektionen "Hitta till oss" via en responsiv <iframe>. Kartan anpassar sig automatiskt till behållarens bredd (width="100%").
+
+3. DESIGNVAL OCH ANVÄNDARUPPLEVELSE (UX)
+
+Färgpaletten har valts med omsorg för att spegla djurparkens natur- och miljöfokus. En djup skogsgrön färg (#2c5e3b) agerar primärfärg för rubriker och tabeller, medan en varm savann-gul färg (#f1a934) används som accentfärg på knappar och linjeavskiljare för att skapa tydliga visuella call-to-actions.
+Typografin använder typsnittet Poppins (hämtat via Google Fonts) vilket ger ett modernt, lättläst och inbjudande intryck på både högupplösta datorskärmar och mindre mobilskärmar.
+
+4. SLUTSATS OCH UTMANINGAR
+
+Den största tekniska utmaningen i projektet låg i att balansera det horisontella kravet för bildgalleriet på desktop med kraven på full responsivitet på mobila enheter. Detta löstes effektivt genom att använda en flexibel layoutmetodik i basskriptet, som sedan omstruktureras till CSS Grid vid mindre skärmbredder. Den resulterande applikationen uppfyller samtliga funktionella och estetiska krav och är redo för produktionssättning som en marknadsföringsplattform för Systementor Zoo.

@@ -1,0 +1,274 @@
+/* ==========================================================================
+   Systementor Zoo Custom Stylesheet
+   All class names are strictly in English and follow clean layout guidelines.
+   ========================================================================== */
+
+/* --- Base & Layout Elements --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcfcfc;
+    color: #333333;
+    scroll-behavior: smooth;
+}
+
+.max-width-form {
+    max-width: 650px;
+}
+
+/* --- Hero Header Section --- */
+.hero-section {
+    background-image: url('./gettyimages-458594923-612x612.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    min-height: 400px;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.main-title {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.subtitle {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* --- Navigation --- */
+.main-navigation {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nav-item {
+    transition: color 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    color: #ffc107 !important;
+}
+
+/* --- Section Typography --- */
+.section-title {
+    color: #1b4d3e;
+    font-weight: 700;
+}
+
+.subsection-title {
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Horizontal Animal Gallery Section --- */
+.animal-gallery-row {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.gallery-img {
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+.item-label {
+    color: #444;
+}
+
+/* --- Att Göra Section & Cards --- */
+.todo-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: #ffffff;
+}
+
+.todo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+}
+
+/* --- Features Section Layouts --- */
+.feature-img {
+    max-height: 350px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* --- Data Table Styling --- */
+.zoo-table-container {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-animal-img {
+    width: 70px;
+    height: 50px;
+    object-fit: cover;
+}
+
+
+/* ==========================================================================
+   Responsive Design & Breakpoints (VG Requirements)
+   Minst 3 Breakpoints (Mobile, Tablet, Desktop adjustments)
+   ========================================================================== */
+
+/* Breakpoint 1: Small Devices / Mobile (Max 576px) */
+@media (max-width: 576px) {
+    .hero-section {
+        height: 45vh;
+        min-height: 300px;
+    }
+    .main-title {
+        font-size: 2.2rem !important;
+    }
+    .gallery-img {
+        width: 150px;
+        height: 110px;
+    }
+    .nav-item {
+        display: block;
+        margin: 8px 0;
+    }
+}
+
+/* Breakpoint 2: Medium Devices / Tablets (577px to 992px) */
+@media (min-width: 577px) and (max-width: 992px) {
+    .hero-section {
+        height: 50vh;
+    }
+    .gallery-img {
+        width: 180px;
+        height: 130px;
+    }
+}
+
+/* Breakpoint 3: Large / Desktop Devices (Min 993px) */
+@media (min-width: 993px) {
+    .animal-gallery-row {
+        overflow: hidden; /* No scroll needed on giant displays */
+        flex-wrap: wrap !important;
+    }
+    .feature-row {
+        padding: 2rem 0;
+    }
+}
+ /* ==========================================================================
+   Responsive Design & Breakpoints (VG Requirements)
+   Minst 3 Breakpoints (Mobile, Tablet, Desktop adjustments)
+   ========================================================================== */
+ 
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2e7d32;
+}
+
+.submit-button {
+  background-color: #2e7d32;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #1b5e20;
+}
+
+/* ==========================================================================
+   Map Container
+   ========================================================================== */
+.map-container {
+  margin-top: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  background-color: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints (Krav för VG - 3 Breakpoints)
+   ========================================================================== */
+
+/* Breakpoint 1: Mobile Devices (upp till 576px) */
+@media (max-width: 576px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Breakpoint 2: Tablets (577px till 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .activities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Breakpoint 3: Desktops / Large Screens (från 769px och uppåt) */
+@media (min-width: 769px) {
+  .activities-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
